@@ -26,7 +26,7 @@ services:
       - "8081:80"
 
   moodle:
-    image: bitnami/moodle:latest
+    build: .  # This tells docker-compose to build from the Dockerfile in current directory
     container_name: moodle_app
     depends_on:
       - mariadb
