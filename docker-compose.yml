@@ -50,6 +50,10 @@ services:
       - "8443:8443"
     volumes:
       - moodle_data:/bitnami/moodle
+      # Mount your plugin directory for live development
+      - ./blocks/aiassistant:/bitnami/moodle/blocks/aiassistant
+    # Optional: Keep container running even if grunt watch fails
+    restart: unless-stopped
 
 volumes:
   db_data:
